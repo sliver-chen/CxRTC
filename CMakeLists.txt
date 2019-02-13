@@ -1,0 +1,21 @@
+project(CxRTC)
+
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 11)
+
+option(BUILD_MACOS "option for macOS platform build" OFF)
+option(BUILD_UNIX "option for unix platform build" OFF)
+option(BUILD_IOS "option for iOS platform build" OFF)
+option(BUILD_ANDROID "option for android platform build" OFF)
+
+if (BUILD_MACOS)
+    message("build macOS platform framework")
+elseif (BUILD_IOS)
+    message("build iOS platform framework")
+elseif (BUILD_ANDROID)
+    message("build android platform framework")
+elseif (BUILD_UNIX)
+    message("build unix platform framework")
+else ()
+    message(FATAL_ERROR "you must select a target platform for build")
+endif()
